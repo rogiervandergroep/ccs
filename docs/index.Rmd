@@ -1,0 +1,156 @@
+---
+title: ""
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      in_header: assets/head.html
+    css: assets/style/os-style.css
+---
+
+```{r setup, include=FALSE}
+
+
+#nb: check title in head.html
+
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(ggiraph)
+
+opts_chunk$set(
+  dev = "svg",
+  echo = FALSE,
+  warning = FALSE,
+  options(
+    knitr.table.format = "html")
+  )
+
+load(file = "index.RData")
+
+```
+
+In 2021 zijn 44.910 bedrijven en 71.805 banen te vinden in de culturele en creatieve sector (CCS) in de arbeidsmarktregio Groot-Amsterdam. Dit is een vijfde van alle bedrijven en 7% van alle banen in dit gebied. Ongeveer 90 procent van de bedrijven en banen in de CCS is te vinden in Amsterdam, gevolgd door de Haarlemmermeer met 6% van de banen en bedrijven in deze sector.
+
+::: {style="display: grid; grid-template-columns: 1fr 1fr"}
+::: {style="background-color:#e7e7e7 !important; padding: 40px 40px"}
+Onder de arbeidsmarktregio Groot-Amsterdam vallen de gemeenten Amstelveen, Amsterdam (inclusief Weesp), Aalsmeer, Haarlemmermeer, Diemen, Uithoorn, Ouder-Amstel en De Ronde Venen.
+:::
+
+```{r, fig.cap= "Aantal banen CCS per gemeente Groot-Amsterdam, 2021 (abs.)", fig.width=4, fig.height=4}
+# figuur rechts 
+plot_list$int_plot1a
+
+```
+:::
+
+::: {style="display: grid; grid-template-columns: 1fr 1fr"}
+```{r, fig.cap= "Aantal bedrijven en banen in deelsectoren CCS, 2021 (abs.)", fig.width=4, fig.height=3}
+# figuur links 
+plot_list$int_plot2
+```
+
+::: {style="background-color:#e7e7e7 !important; padding: 40px 40px"}
+De culturele en creatieve sector is gebaseerd op een verzameling branches. Op basis hiervan zijn vier deelsectoren geformuleerd, te weten: **Kunst en Cultureel Erfgoed**, **Media en Entertainment**, **Creatieve Zakelijke Diensten** en **Onderwijs, gerelateerd aan de culturele sector**. De meeste bedrijven en banen zijn te vinden in de deelsector Kunst en Cultureel Erfgoed.
+:::
+:::
+
+<P style="page-break-before: always">
+
+::: {style="display: grid; grid-template-columns: 1fr 1fr"}
+::: {style="background-color:#e7e7e7 !important; padding: 40px 40px"}
+Het aandeel bedrijven in de culturele en creatieve sector is in Amsterdam het hoogst. Ruim een kwart (26%) van de bedrijven en 10% van de banen in Amsterdam is een bedrijf en een baan in de culturele en creatieve sector. Het grootste deel hiervan is te herleiden tot bedrijven in de deelsector kunst en cultureel erfgoed.
+:::
+
+```{r, fig.width=4, fig.height=3, fig.cap= "Aandeel bedrijven en banen CCS per gemeente, 2021 (aandeel CCS van totaal aantal bedrijven en banen, %)"}
+# figuur rechts 
+plot_list$int_plot3
+```
+:::
+
+<P style="page-break-before: always">
+
+### Ontwikkeling bedrijven en banen
+
+Het aantal bedrijven in de culturele en creatieve sector is in Groot-Amsterdam met 20% toegenomen tussen 2017 en 2021 en het aantal banen met 7%. Deze stijging is minder hoog dan in andere sectoren alwaar deze 26% van de bedrijven en 10% van de banen bedroeg.
+
+```{r, fig.cap="Ontwikkeling bedrijven en banen CCS, 2017-2021 (indexcijfers, 2017=100)" }
+plot_list$int_plot4
+```
+
+### Bedrijfsgrootte
+
+::: {style="display: grid; grid-template-columns: 1fr 1fr"}
+```{r , fig.cap="Bedrijfsgrootte CCS en totale economie, 2021 (%)", fig.width=4, fig.height=3 }
+plot_list$int_plot5
+```
+
+::: {style="background-color:#e7e7e7 !important; padding: 40px 40px"}
+Driekwart (74%) van de bedrijven in de culturele en creatieve sector bestaat uit eenpersoonszaken. Dit resulteert in 51% van alle banen in de culturele en creatieve sector. In de totale economie in Groot-Amsterdam is 63% een eenpersoonszaak. Hiermee is 14% van de banen gemoeid.
+:::
+:::
+
+<P style="page-break-before: always">
+
+### Werkenden in de culturele en creatieve sector
+
+Bij bedrijven in de culturele en creatieve sector in de regio werken ongeveer evenveel mannen als vrouwen. Het percentage vrouwen ligt hiermee iets hoger dan bij andere sectoren in de economie. Dit komt omdat er relatief veel vrouwen in de deelsectoren kunst en cultureel erfgoed en onderwijs werken. De gemiddelde leeftijd van vrouwen in de culturele en creatieve sector is wel iets lager dan van mannen. 30% van de vrouwen in de CCS is onder de 30 jaar tegenover 27% van de mannen.
+
+::: {style="display: grid; grid-template-columns: 1fr 1fr"}
+```{r fig.cap=c("Verdeling werkenden naar mannen en vrouwen in CCS en totale economie, 2021 (%)", "Verdeling werkenden naar leeftijdsgroep in CCS en totale economie, 2021 (%)")}
+
+plot_list$int_plot7_gesl
+plot_list$int_plot7_lft
+```
+:::
+
+Wat ook opvalt is dat het aandeel in de culturele en creatieve sector zonder migratieachtergrond relatief hoog is (83% tegenover 78% in de totale MRA-economie). Dit geldt ook wanneer we kijken naar het opleidingsniveau. De helft van de werkenden in de culturele en creatieve sector heeft minimaal een HBO-opleiding. Dit aandeel is hoger dan in de rest van de regionale economie.
+
+::: {style="display: grid; grid-template-columns: 1fr 1fr"}
+```{r fig.cap=c("Verdeling werkenden naar herkomstgroep in CCS en totale economie, 2021 (%)", "Verdeling werkenden naar opleidingsgroep in CCS en totale economie, 2021 (%)")}
+
+plot_list$int_plot7_mig
+plot_list$int_plot7_opl
+```
+:::
+
+<P style="page-break-before: always">
+
+### Inkomen
+
+::: {style="display: grid; grid-template-columns: 1fr 1fr"}
+::: {style="background-color:#e7e7e7 !important; padding: 40px 40px"}
+Het mediaan bruto huishoudensinkomen van werkenden in de culturele en creatieve sector bedraagt in 2021 51.990. Dat is lager dan bij de gehele werkzame beroepsbevolking (62.599 euro) in Groot Amsterdam. Binnen de culturele en creatieve sector heeft de beroepsgeroep kunstenaars (uitvoerend en beeldend) een aanzienlijk lager mediaan inkomen: 34.828 euro.
+:::
+
+```{r fig.cap="Mediaan bruto inkomen huishouden van kunstenaars en  werkenden in CSS en totale werkende beroepsbevolking, Groot-Amsterdam, 2021 (euro's)"}
+
+plot_list$int_plot8
+
+```
+:::
+
+<P style="page-break-before: always">
+
+### Colofon
+
+<div>
+
+Deze factsheet is geschreven door\
+Rogier van der Groep, Bart Sleutjes en Idske de Jong\
+in opdracht van\
+Economische Zaken en Cultuur (EZC)\
+Gemeente Amsterdam\
+April 2023
+
+</div>
+
+<div>
+
+Onderzoek en Statistiek\
+onderzoek.amsterdam.nl\
+Gemeente Amsterdam\
+
+</div>
+:::
