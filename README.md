@@ -1,2 +1,6 @@
 # ccs
-overzicht cultuele en creatieve industrie in de arbeidsmarktregio Groot-Amsterdam
+Een overzicht van de culturele en creatieve sector (CSS) in de arbeidsmarktregio Groot-Amsterdam
+
+https://rogiervandergroep.github.io/ccs/
+
+
